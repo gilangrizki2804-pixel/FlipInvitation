@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Wedding of Raden & Arum - Undangan Pernikahan</title>
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- St.PageFlip Browser Library -->
+  <script src="page-flip.browser.js"></script>
+</head>
+<body>
+
+  <!-- Floating Audio Player Button -->
+  <button id="floating-music-btn" class="floating-music-btn" title="Nyalakan / Matikan Musik" aria-label="Toggle Music">
+    <svg viewBox="0 0 24 24">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    </svg>
+  </button>
+
+  <!-- Audio Element (Instrumental Wedding Music) -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-114407.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Notifikasi</div>
+
+  <!-- =======================================================
+       FLIPBOOK VIEWPORT (LANGSUNG COVER DEPAN)
+       ======================================================= -->
+  <main class="flipbook-viewport">
+    <div class="flipbook-container">
+      <div id="flipbook">
+
+        <!-- ================= PAGE 0: FRONT COVER (SAMPUL DEPAN) ================= -->
+        <div class="page page-cover" data-density="hard">
+          <div class="cover-overlay-content">
+            <div class="cover-badge">The Wedding Of</div>
+            <h2 class="cover-title">Raden & Arum</h2>
+            <div class="cover-subtitle">Walimatul 'Ursy</div>
+            <div class="cover-divider"></div>
+
+            <div class="cover-guest-box">
+              <div class="cover-guest-title">Kepada Yth. Bapak/Ibu/Saudara/i:</div>
+              <div class="cover-guest-name guest-name-placeholder">Tamu Undangan</div>
+            </div>
+
+            <div class="cover-date-badge">Sabtu, 24 Oktober 2026</div>
+
+            <button id="btn-open-from-cover" class="btn-cover-action">
+              <span>Buka Undangan</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div id="cover-flip-trigger" class="cover-flip-hint">
+            <span>Buka Halaman</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 1: SALAM & AYAT SUCI (LEFT PAGE) ================= -->
+        <div class="page page-inner-theme page-left" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-left.png" class="page-corner-decor left" alt="">
+
+          <div class="page-inner-content">
+            <div class="section-title">Assalamu’alaikum Wr. Wb.</div>
+            <div class="arabic-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="salam-text">Dengan Memohon Rahmat & Ridho Allah SWT</div>
+
+            <div class="verse-card">
+              <div class="verse-arabic">
+                وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
+              </div>
+              <div class="verse-translation">
+                "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir."
+              </div>
+              <div class="verse-surah">QS. Ar-Rum: 21</div>
+            </div>
+
+            <div class="intro-closing">
+              Maha Suci Allah yang telah mempertemukan kami dalam ikatan suci pernikahan. Merupakan suatu kehormatan bagi kami mengabarkan hari bahagia ini.
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 2: PROFIL MEMPELAI (RIGHT PAGE) ================= -->
+        <div class="page page-inner-theme page-right" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-right.png" class="page-corner-decor right" alt="">
+
+          <div class="page-inner-content">
+            <div class="section-title">Mempelai Berbahagia</div>
+
+            <!-- Mempelai Pria -->
+            <div class="profile-card">
+              <div class="profile-avatar-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
+              <h3 class="profile-name">Raden Arya Wicaksana, S.T.</h3>
+              <p class="profile-parents">Putra pertama dari Bpk. Bambang Sutrisno & Ibu Sri Rahayu</p>
+              <a href="#" class="profile-ig">@raden.arya</a>
+            </div>
+
+            <!-- Botanical Divider -->
+            <div class="floral-divider-wrap">
+              <img src="ornament-divider.png" class="section-floral-divider" alt="Divider">
+            </div>
+
+            <!-- Mempelai Wanita -->
+            <div class="profile-card">
+              <div class="profile-avatar-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C9.24 2 7 4.24 7 7c0 2.38 1.66 4.38 3.9 4.88-2.6.53-4.9 2.05-4.9 4.62V19h12v-2.5c0-2.57-2.3-4.09-4.9-4.62C15.34 11.38 17 9.38 17 7c0-2.76-2.24-5-5-5z"/>
+                </svg>
+              </div>
+              <h3 class="profile-name">Arum Sekar Kinanthi, S.Ds.</h3>
+              <p class="profile-parents">Putri kedua dari Bpk. Hartono Wijaya & Ibu Endang Lestari</p>
+              <a href="#" class="profile-ig">@arum.kinanthi</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 3: RANGKAIAN ACARA & COUNTDOWN ================= -->
+        <div class="page page-inner-theme page-left" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-left.png" class="page-corner-decor left" alt="">
+
+          <div class="page-inner-content">
+            <div class="section-title">Rangkaian Acara</div>
+
+            <!-- Akad Nikah -->
+            <div class="event-box">
+              <div class="event-box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#C59B27">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                Akad Nikah
+              </div>
+              <div class="event-info-line">📅 Sabtu, 24 Oktober 2026</div>
+              <div class="event-info-line">⏰ 08.00 - 10.00 WIB</div>
+              <div class="event-info-line">📍 Gedung Sasana Kriya (TMII)</div>
+            </div>
+
+            <!-- Resepsi Pernikahan -->
+            <div class="event-box">
+              <div class="event-box-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#C59B27">
+                  <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4H8l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4z"/>
+                </svg>
+                Resepsi Pernikahan
+              </div>
+              <div class="event-info-line">📅 Sabtu, 24 Oktober 2026</div>
+              <div class="event-info-line">⏰ 11.00 - 14.00 WIB</div>
+              <div class="event-info-line">📍 Grand Ballroom Sasana Kriya</div>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-wrapper">
+              <div class="countdown-title">Hitung Mundur Hari Bahagia</div>
+              <div class="countdown-grid">
+                <div class="countdown-item">
+                  <div id="cd-days" class="countdown-num">00</div>
+                  <div class="countdown-label">Hari</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="cd-hours" class="countdown-num">00</div>
+                  <div class="countdown-label">Jam</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="cd-mins" class="countdown-num">00</div>
+                  <div class="countdown-label">Menit</div>
+                </div>
+                <div class="countdown-item">
+                  <div id="cd-secs" class="countdown-num">00</div>
+                  <div class="countdown-label">Detik</div>
+                </div>
+              </div>
+            </div>
+
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+Wedding+of+Raden+%26+Arum&dates=20261024T010000Z/20261024T070000Z&details=Pernikahan+Raden+Arya+%26+Arum+Sekar&location=Sasana+Kriya+TMII" target="_blank" class="btn-cal">
+              📅 Simpan ke Google Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 4: LOKASI & DENAH ================= -->
+        <div class="page page-inner-theme page-right" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-right.png" class="page-corner-decor right" alt="">
+
+          <div class="page-inner-content">
+            <div class="section-title">Lokasi Acara</div>
+
+            <div class="location-card">
+              <div class="location-icon-pin">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <h3 class="location-name">Gedung Sasana Kriya</h3>
+              <p class="location-address">
+                Jl. Taman Mini Indonesia Indah, Ceger, Kec. Cipayung, Kota Jakarta Timur, DKI Jakarta 13820
+              </p>
+              <a href="https://maps.google.com/?q=Sasana+Kriya+TMII+Jakarta" target="_blank" class="btn-maps">
+                📍 Buka Petunjuk Arah (Maps)
+              </a>
+            </div>
+
+            <div class="protocol-box">
+              <div class="protocol-title">Petunjuk & Dress Code</div>
+              <p class="protocol-desc">
+                Tamu undangan disarankan mengenakan busana bernuansa <strong>Batik Tradisional / Formal / Earth Tone</strong>.
+                Area parkir luas tersedia di area depan gedung Sasana Kriya.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 5: KISAH PERJALANAN ================= -->
+        <div class="page page-inner-theme page-left" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-left.png" class="page-corner-decor left" alt="">
+
+          <div class="page-inner-content">
+            <div class="section-title">Kisah Perjalanan Kami</div>
+
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2021</div>
+                <div class="timeline-title">Awal Berjumpa</div>
+                <div class="timeline-desc">Pertemuan pertama kami di pameran seni budaya Yogyakarta yang memantik obrolan penuh kehangatan.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2023</div>
+                <div class="timeline-title">Menjalin Komitmen</div>
+                <div class="timeline-desc">Saling mendampingi proses dan cita-cita, hingga kami bersepakat melangkah bersama.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2025</div>
+                <div class="timeline-title">Hari Lamaran</div>
+                <div class="timeline-desc">Mendapat restu tulus dari kedua belah pihak keluarga besar dalam prosesi lamaran adat.</div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">2026</div>
+                <div class="timeline-title">Menuju Babak Baru</div>
+                <div class="timeline-desc">Mengikat janji suci pernikahan untuk mengarungi sisa waktu dalam ikatan suci.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 6: AMPLOP DIGITAL & KADO ================= -->
+        <div class="page page-inner-theme page-right" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-right.png" class="page-corner-decor right" alt="">
+
+          <div class="page-inner-content">
+            <div class="section-title">Tanda Kasih (Wedding Gift)</div>
+            <p style="font-size:0.73rem; text-align:center; color:var(--text-muted); margin-bottom:10px;">
+              Doa restu Anda merupakan karunia terindah bagi kami. Bagi yang ingin memberikan tanda kasih secara cashless:
+            </p>
+
+            <!-- Rekening 1 -->
+            <div class="gift-card">
+              <div class="gift-bank-name">BANK BCA</div>
+              <div class="gift-account-number">1234 5678 90</div>
+              <div class="gift-holder">a.n Raden Arya Wicaksana</div>
+              <button class="btn-copy btn-copy-account" data-account="1234567890">
+                📋 Salin Rekening
+              </button>
+            </div>
+
+            <!-- Rekening 2 -->
+            <div class="gift-card">
+              <div class="gift-bank-name">BANK MANDIRI</div>
+              <div class="gift-account-number">9876 5432 10123</div>
+              <div class="gift-holder">a.n Arum Sekar Kinanthi</div>
+              <button class="btn-copy btn-copy-account" data-account="9876543210123">
+                📋 Salin Rekening
+              </button>
+            </div>
+
+            <!-- Kado Fisik -->
+            <div class="physical-gift-card">
+              <strong>Kirim Hadiah Fisik:</strong><br>
+              Jl. Cendrawasih No. 18, Kebayoran Baru, Jakarta Selatan 12150 (Up: Raden & Arum)
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 7: RSVP & UCAPAN ================= -->
+        <div class="page page-inner-theme page-left" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-left.png" class="page-corner-decor left" alt="">
+
+          <div class="page-inner-content">
+            <div class="section-title">Konfirmasi & Doa Restu</div>
+
+            <form id="rsvp-form" class="rsvp-form">
+              <input type="text" id="rsvp-name" class="rsvp-input" placeholder="Nama Anda" required>
+              <select id="rsvp-status" class="rsvp-select">
+                <option value="attending">✓ Hadir</option>
+                <option value="not-attending">✕ Berhalangan Hadir</option>
+              </select>
+              <textarea id="rsvp-message" class="rsvp-textarea" placeholder="Tulis doa & ucapan selamat..." required></textarea>
+              <button type="submit" class="btn-submit-rsvp">Kirim Ucapan & Doa</button>
+            </form>
+
+            <div id="wishes-list" class="wishes-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 8: FILOSOFI & DOA ================= -->
+        <div class="page page-inner-theme page-right" data-density="soft">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+          
+          <img src="ornament-corner-right.png" class="page-corner-decor right" alt="">
+
+          <div class="page-inner-content" style="text-align:center;">
+            <div class="section-title">Pitutur Luhur</div>
+
+            <div style="margin: 14px 0 10px;">
+              <p style="font-family:var(--font-serif); font-size:1.05rem; font-style:italic; color:var(--maroon-dark); line-height:1.7;">
+                "Mugi tansah manggih rahayu wilujeng, atut runtut hayu-hayuning bawana, kaken-kaken ninen-ninen dumugining pati."
+              </p>
+              
+              <div class="floral-divider-wrap" style="margin: 10px auto;">
+                <img src="ornament-divider.png" class="section-floral-divider" alt="Divider">
+              </div>
+
+              <p style="font-size:0.75rem; color:var(--text-muted); line-height:1.6;">
+                Semoga senantiasa dianugerahi keselamatan dan keberkahan, rukun berdampingan hingga usia senja memutih bersama.
+              </p>
+            </div>
+
+            <div style="background:rgba(255,255,255,0.85); border:1px solid rgba(197,155,39,0.35); border-radius:12px; padding:14px; margin-top:8px;">
+              <div style="font-family:var(--font-royal); font-size:0.75rem; color:var(--gold-dark); margin-bottom:4px; letter-spacing:1px;">
+                TERIMA KASIH
+              </div>
+              <p style="font-size:0.74rem; color:var(--text-dark); line-height:1.5;">
+                Kehadiran dan doa restu Anda adalah pelengkap kebahagiaan kami yang tak ternilai harganya.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 9: BACK COVER ================= -->
+        <div class="page page-inner-theme page-back-cover" data-density="hard">
+          <div class="page-top-floral">
+            <img src="ornament-top.png" alt="Floral Garland" class="floral-garland-img">
+          </div>
+
+          <div class="page-inner-content" style="justify-content:center; text-align:center;">
+            <div class="back-cover-monogram">
+              <span>R&A</span>
+            </div>
+
+            <div class="back-cover-closing">
+              Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.
+            </div>
+
+            <div class="floral-divider-wrap" style="margin: 8px auto 14px;">
+              <img src="ornament-divider.png" class="section-floral-divider" alt="Divider">
+            </div>
+
+            <div class="back-cover-family">
+              Keluarga Besar Bpk. Bambang Sutrisno & Ibu Sri Rahayu<br>
+              serta<br>
+              Keluarga Besar Bpk. Hartono Wijaya & Ibu Endang Lestari
+            </div>
+
+            <div class="back-cover-signature">Raden & Arum</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- =======================================================
+       BOTTOM NAVIGATION DOCK
+       ======================================================= -->
+  <nav class="control-dock">
+    <button id="btn-prev" class="dock-btn" title="Halaman Sebelumnya" aria-label="Previous Page">
+      <svg viewBox="0 0 24 24">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </button>
+
+    <div id="page-indicator" class="page-indicator">1 / 10</div>
+
+    <button id="btn-next" class="dock-btn" title="Halaman Selanjutnya" aria-label="Next Page">
+      <svg viewBox="0 0 24 24">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+      </svg>
+    </button>
+
+    <div style="width: 1px; height: 18px; background: rgba(197,155,39,0.4);"></div>
+
+    <button id="music-toggle" class="dock-btn" title="Nyalakan/Matikan Musik" aria-label="Toggle Music">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+    </button>
+
+    <button id="btn-toc" class="dock-btn" title="Daftar Isi" aria-label="Table of Contents">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
+
+    <button id="btn-fullscreen" class="dock-btn" title="Layar Penuh" aria-label="Fullscreen">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- =======================================================
+       TABLE OF CONTENTS (DAFTAR ISI) MODAL
+       ======================================================= -->
+  <div id="toc-modal" class="toc-modal">
+    <div class="toc-card">
+      <div class="toc-header">
+        <h3>Daftar Isi Undangan</h3>
+        <button id="btn-close-toc" class="toc-close">&times;</button>
+      </div>
+      <div class="toc-list">
+        <div class="toc-item" data-page="0">
+          <span>📖 Sampul Depan (Cover)</span>
+          <span>Hal. 1</span>
+        </div>
+        <div class="toc-item" data-page="1">
+          <span>🕊️ Salam & Ayat Suci (Ar-Rum: 21)</span>
+          <span>Hal. 2</span>
+        </div>
+        <div class="toc-item" data-page="2">
+          <span>👑 Mempelai Pria & Wanita</span>
+          <span>Hal. 3</span>
+        </div>
+        <div class="toc-item" data-page="3">
+          <span>⏰ Akad Nikah & Resepsi</span>
+          <span>Hal. 4</span>
+        </div>
+        <div class="toc-item" data-page="4">
+          <span>📍 Lokasi Acara & Denah</span>
+          <span>Hal. 5</span>
+        </div>
+        <div class="toc-item" data-page="5">
+          <span>💫 Cerita Kisah Cinta (Story)</span>
+          <span>Hal. 6</span>
+        </div>
+        <div class="toc-item" data-page="6">
+          <span>🎁 Tanda Kasih & Rekening</span>
+          <span>Hal. 7</span>
+        </div>
+        <div class="toc-item" data-page="7">
+          <span>💌 Konfirmasi Kehadiran & RSVP</span>
+          <span>Hal. 8</span>
+        </div>
+        <div class="toc-item" data-page="8">
+          <span>🌿 Pitutur Luhur & Doa Restu</span>
+          <span>Hal. 9</span>
+        </div>
+        <div class="toc-item" data-page="9">
+          <span>✨ Sampul Belakang (Penutup)</span>
+          <span>Hal. 10</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
